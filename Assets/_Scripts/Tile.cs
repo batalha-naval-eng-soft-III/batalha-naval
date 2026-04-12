@@ -8,6 +8,7 @@ public class Tile : MonoBehaviour
 
     [SerializeField] private Color _corPar, _corImpar;
     [SerializeField] private SpriteRenderer _renderizacao;
+    [SerializeField] private GameObject _highlight;
 
 
     public void Init(bool impar_par)
@@ -15,6 +16,15 @@ public class Tile : MonoBehaviour
         _renderizacao.color = impar_par ? _corImpar : _corPar;
     }
 
+    void OnMouseEnter()
+    {
+        _highlight.SetActive(true);
+    }
+
+    void OnMouseExit()
+    {
+        _highlight.SetActive(false);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
